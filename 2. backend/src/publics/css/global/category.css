@@ -1,0 +1,35 @@
+.category {
+    width: 24%;
+
+    border-right: 1px solid black;
+}
+
+.groupCategory {
+    width: 100%;
+    padding: 0 0 0 10px;
+}   
+
+.groupCategory:has(> .listGroupCategory:not(.hidden)) .titleGroupCategory>h3 {
+    color: red;
+}
+
+.titleGroupCategory {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.titleGroupCategory:hover>h3,
+.titleGroupCategory a:hover,
+.itemGroupCategory:hover a{
+    color: gray;
+}
+
+.listGroupCategory {
+    display: block;
+}
+
+.itemGroupCategory {
+    margin-left: 40px;
+}

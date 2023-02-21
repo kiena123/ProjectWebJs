@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/global/global.css" rel="stylesheet">
+    <link href="/css/global/configs/form.css" rel="stylesheet">
+</head>
+<body>
+    <%- include("../global/header") %>
+    <main>
+        <%- include("../global/category") %>
+
+        <div class="content">
+            <div class="groupBoxContent">
+                    <% if(locals.keysData) { %>
+                        <form action="/product/update/<%= data['id'] %>" method="post">
+                        <% for(let i = 1; i < keysData.length; i++) { %>
+                            <div class="rowForm">
+                                <label for="<%= keysData[i] %>"><%= keysData[i] %></label>
+                                <input type="text" id="<%= keysData[i] %>" name="<%= keysData[i] %>" value="<%= data[keysData[i]] %>">
+                            </div>
+                        <% } %>
+                        <div class="rowForm">
+                            <p id="messNotify"></p>
+                        </div>
+                        <div class="rowForm">
+                            <button type="submit">Update</button>
+                        </div>
+                    <% } else { %>
+                        <form action="/product/add" method="post">
+                        <div class="rowForm">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" value="">
+                        </div>
+                        <div class="rowForm">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" value=0>
+                        </div>  
+                        <div class="rowForm">
+                            <p id="messNotify"></p>
+                        </div>
+                        <div class="rowForm">
+                            <button type="submit">Add</button>
+                        </div>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../global/footer") %>
+
+    <script type="module" src="/js/global/products/formProduct.js" ></script>
+</body>
+</html>

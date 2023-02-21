@@ -1,0 +1,68 @@
+
+/* Table */
+table {
+    border: 1px solid #dee2e6; 
+    display: block;
+    min-height: 500px;
+    padding: 10px;
+}
+
+table>thead {
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+table>tbody {
+    display: block;
+}
+
+table tr {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+table>tbody>tr {
+    border-bottom: 1px solid #dee2e6; 
+}
+
+table>tbody>tr:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+table tr>th {
+    padding: 10px;
+    display: block;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+table tr>td {
+    padding: 10px;
+    display: block;
+}
+
+table tr>td>a {
+    padding-right: 10px;
+}
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 16px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #dee2e6;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/global/global.css" rel="stylesheet">
+    <link href="/css/global/configs/table.css" rel="stylesheet">
+    <link href="/css/product.css" rel="stylesheet">
+</head>
+<body>
+    <%- include("../global/header") %>
+    <main>
+        <%- include("../global/category") %>
+
+        <div class="content">
+            <div class="groupBoxContent headerContent">
+                <h2>Product Page</h2>
+                <a href="/product/add">Add</a>
+            </div>
+            <div class="groupBoxContent">
+                <table id = "table">
+                    <thead>
+                        <tr>
+                            <% keysData.forEach(function(val){ %>
+                                <th>
+                                    <%= val %>
+                                </th>
+                            <% }) %>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(function(val){ %>
+                            <tr>
+                                <% for(let i = 0; i < keysData.length - 1; i++){ %>
+                                    <td>
+                                        <%= val[keysData[i]] %>
+                                    </td>
+                                <% } %>
+                                <td>
+                                    <a href="/product/update/<%= val['id'] %>">Sua</a>
+                                    <a href="/product/delete/<%= val['id'] %>">Xoa</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="groupBoxContent">
+                <div class="pagination">
+                    <a href="/product/1">&laquo;</a>
+                    <% if( pagination['number'] - 2 >= 1){ %>
+                        <a href="/product/<%= pagination['number']-2 %>"><%= pagination['number'] - 2 %></a>
+                    <% } %>
+                    <% if( pagination['number'] - 1 >= 1){ %>
+                        <a href="/product/<%= pagination['number']-1 %>"><%= pagination['number'] - 1 %></a>
+                    <% } %>
+                    <a class="active" href="/product/<%= pagination['number'] %>"><%= pagination['number'] %></a>
+                    <% if( pagination['count'] >= pagination['number'] + 1 ){ %>
+                        <a href="/product/<%= pagination['number']+1 %>"><%= pagination['number'] + 1 %></a>
+                    <% } %>
+                    <% if( pagination['count'] >= pagination['number'] + 2 ){ %>
+                        <a href="/product/<%= pagination['number']+2 %>"><%= pagination['number'] + 2 %></a>
+                    <% } %>
+                    <% if( pagination['count'] >= pagination['number'] + 3 ){ %>
+                        <a href="/product/<%= pagination['number']+3 %>"><%= pagination['number'] + 3 %></a>
+                    <% } %>
+                    <a href="/product/<%= pagination['count'] %>">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../global/footer") %>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+form {
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+
+.rowForm {
+    padding: 10px;
+}
+
+.rowForm label {
+    text-transform: capitalize;
+}
+
+.rowForm input {
+    padding: 6px;
+}
+
+#messNotify {
+    color: red;
+}
+
+.rowForm button {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 140px;
+    background-color: greenyellow;
+}
