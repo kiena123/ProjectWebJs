@@ -1,6 +1,6 @@
 import promisePool from "../configs/connectDB"
 
-const typeColumns = {
+const columnTypes = {
     "email": "string",
     "password": "number"
 }
@@ -36,7 +36,7 @@ class AccountTable {
             // String list columns in sql
             colunmsString += ((index > 0) ? " , " : "") + `${element}`
             // String list values in sql 
-            switch (typeColumns[element]) {
+            switch (columnTypes[element]) {
                 case "string":
                     valuesString += ((index > 0) ? " , " : "") + `'${values[element]}'`
                     break;
@@ -70,7 +70,7 @@ class AccountTable {
             for (let index = 0; index < keyValues.length; index++) {
                 const element = keyValues[index];
 
-                switch (typeColumns[element]) {
+                switch (columnTypes[element]) {
                     case "string":
                         sqlString += ((index > 0) ? "and " : "") + `${element} = '${whereObjects[element]}'`
                         break;

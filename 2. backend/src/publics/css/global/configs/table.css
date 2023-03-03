@@ -19,7 +19,6 @@ table>tbody {
 table tr {
     display: flex;
     padding: 10px 0;
-    justify-content: space-between;
 }
 
 table>tbody>tr {
@@ -30,16 +29,24 @@ table>tbody>tr:hover {
     background-color: rgba(128, 128, 128, 0.1);
 }
 
-table tr>th {
+table tr>* {
     padding: 10px;
     display: block;
+}
+
+table tr>*:last-child {
+    display: flex;
+    justify-content: space-around;
+}
+
+table tr>th {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
 
 table tr>td {
-    padding: 10px;
-    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 table tr>td>a {

@@ -1,6 +1,5 @@
 import express from 'express'; 
-import ProductController from "../controllers/Web/ProductController";
-import AccountController from "../controllers/Web/AccountController";
+import { ProductController, AccountController, UserController} from "../controllers/Web";
 
 let router = express.Router();
 
@@ -22,24 +21,24 @@ const initWebRoute = (app) => {
      */
 
     // [Get] /user/list/:number
-    router.get("/user/list/:number", UserController.Get_Manage)
+    router.get("/user/manage/:number", UserController.Get_Manage)
     // [Get] /user/add
     router.get("/user/add", UserController.Get_Add)
-    // [Post] /user/add
-    router.post("/user/add", UserController.Post_Add)
+    // // [Post] /user/add
+    // router.post("/user/add", UserController.Post_Add)
     // [Get] /user/update/:id
     router.get("/user/update/:id", UserController.Get_Update)
-    // [Post] /user/update/:id
-    router.post("/user/update/:id", UserController.Post_Update)
-    // [Get] /user/delete/:id
-    router.get("/user/delete/:id", UserController.Get_Delete)
+    // // [Post] /user/update/:id
+    // router.post("/user/update/:id", UserController.Post_Update)
+    // // [Get] /user/delete/:id
+    // router.get("/user/delete/:id", UserController.Get_Delete)
 
     /**
      *      Product
      */
 
-    // [Get] /product/list/:number
-    router.get("/product/list/:number", ProductController.Get_Manage)
+    // [Get] /product/manage/:number
+    router.get("/product/manage/:number", ProductController.Get_Manage)
     // [Get] /product/add
     router.get("/product/add", ProductController.Get_Add)
     // [Post] /product/add

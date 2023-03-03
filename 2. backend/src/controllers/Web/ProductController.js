@@ -2,7 +2,7 @@ import promisePool from "../../configs/connectDB";
 
 class ProductController {
     
-    // [Get] /product/list/:number
+    // [Get] /product/manage/:number
     async Get_Manage(req, res) {
         const params = req.params;
         const rowData = {

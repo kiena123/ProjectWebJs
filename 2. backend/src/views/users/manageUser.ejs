@@ -17,7 +17,7 @@
         <div class="content">
             <div class="groupBoxContent headerContent">
                 <h2>Product Page</h2>
-                <a href="/product/add">Add</a>
+                <a href="/user/add">Add</a>
             </div>
             <div class="groupBoxContent">
                 <table id = "table">
@@ -39,8 +39,8 @@
                                     </td>
                                 <% } %>
                                 <td>
-                                    <a href="/product/update/<%= val['id'] %>">Sua</a>
-                                    <a href="/product/delete/<%= val['id'] %>">Xoa</a>
+                                    <a href="/user/update/<%= val['id'] %>">Sua</a>
+                                    <a href="/user/delete/<%= val['id'] %>">Xoa</a>
                                 </td>
                             </tr>
                         <% }) %>
@@ -50,24 +50,24 @@
 
             <div class="groupBoxContent">
                 <div class="pagination">
-                    <a href="/product/manage/1">&laquo;</a>
+                    <a href="/user/manage/1">&laquo;</a>
                     <% if( pagination['number'] - 2 >= 1){ %>
-                        <a href="/product/manage/<%= pagination['number']-2 %>"><%= pagination['number'] - 2 %></a>
+                        <a href="/user/manage/<%= pagination['number']-2 %>"><%= pagination['number'] - 2 %></a>
                     <% } %>
                     <% if( pagination['number'] - 1 >= 1){ %>
-                        <a href="/product/manage/<%= pagination['number']-1 %>"><%= pagination['number'] - 1 %></a>
+                        <a href="/user/manage/<%= pagination['number']-1 %>"><%= pagination['number'] - 1 %></a>
                     <% } %>
-                    <a class="active" href="/product/manage/<%= pagination['number'] %>"><%= pagination['number'] %></a>
+                    <a class="active" href="/user/manage/<%= pagination['number'] %>"><%= pagination['number'] %></a>
                     <% if( pagination['count'] >= pagination['number'] + 1 ){ %>
-                        <a href="/product/manage/<%= pagination['number']+1 %>"><%= pagination['number'] + 1 %></a>
+                        <a href="/user/manage/<%= pagination['number']+1 %>"><%= pagination['number'] + 1 %></a>
                     <% } %>
                     <% if( pagination['count'] >= pagination['number'] + 2 ){ %>
-                        <a href="/product/manage/<%= pagination['number']+2 %>"><%= pagination['number'] + 2 %></a>
+                        <a href="/user/manage/<%= pagination['number']+2 %>"><%= pagination['number'] + 2 %></a>
                     <% } %>
                     <% if( pagination['count'] >= pagination['number'] + 3 ){ %>
-                        <a href="/product/manage/<%= pagination['number']+3 %>"><%= pagination['number'] + 3 %></a>
+                        <a href="/user/manage/<%= pagination['number']+3 %>"><%= pagination['number'] + 3 %></a>
                     <% } %>
-                    <a href="/product/manage/<%= pagination['count'] %>">&raquo;</a>
+                    <a href="/user/manage/<%= pagination['count'] %>">&raquo;</a>
                 </div>
             </div>
         </div>

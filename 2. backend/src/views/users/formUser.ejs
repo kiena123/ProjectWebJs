@@ -16,7 +16,7 @@
         <div class="content">
             <div class="groupBoxContent">
                     <% if(locals.keysData) { %>
-                        <form action="/product/update/<%= data['id'] %>" method="post">
+                        <form action="/user/update/<%= data['id'] %>" method="post">
                         <% for(let i = 1; i < keysData.length; i++) { %>
                             <div class="rowForm">
                                 <label for="<%= keysData[i] %>"><%= keysData[i] %></label>
@@ -30,7 +30,7 @@
                             <button type="submit">Update</button>
                         </div>
                     <% } else { %>
-                        <form action="/product/add" method="post">
+                        <form action="/user/add" method="post">
                         <div class="rowForm">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" value="">

@@ -1,4 +1,4 @@
-export const HandleSubmitFormEvent = (e) => {
+const HandleSubmitFormEvent = (e) => {
     e.preventDefault();
 
     const inputForm = e.target.querySelectorAll(".rowForm>input");
@@ -20,3 +20,9 @@ export const HandleSubmitFormEvent = (e) => {
         }
     })
 }
+
+const allForm = document.querySelectorAll("form")
+
+allForm.forEach(element => {
+    element.onsubmit = HandleSubmitFormEvent
+});
